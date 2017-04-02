@@ -1,7 +1,9 @@
 FROM centos:7
 MAINTAINER Tobias Florek tob@butter.sh
 
-EXPOSE 53535
+EXPOSE 53535/tcp 53535/udp
+
+ADD knot.conf /etc/knot/knot.conf
 
 RUN set -x \
  && rpmkeys --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 \
