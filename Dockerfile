@@ -7,7 +7,7 @@ RUN set -x \
  && rpmkeys --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 \
  && yum --setopt=tsflags=nodocs -y install epel-release \
  && rpmkeys --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7 \
- && yum --setopt=tsflags=nodocs -y install knot \
+ && yum --setopt=tsflags=nodocs -y install knot knot-utils \
  && yum clean all \
  && echo '>>> checking knot uid' \
  && test "$(id -u knot)" = 998 \
